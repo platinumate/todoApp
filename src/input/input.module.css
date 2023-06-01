@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;500&display=swap");
+
+.input {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+.input input {
+  border: 1.8px solid;
+  border-radius: 20px;
+  outline: none;
+  padding: 8px 14px;
+  width: 45%;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+
+  background-color: transparent;
+}
