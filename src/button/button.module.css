@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;500&display=swap");
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 205, 156);
+  border-radius: 15px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 6px 30px 6px 10px;
+  margin-right: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  background-repeat: no-repeat;
+  background-position: right, center;
+}
+.button:hover {
+  opacity: 0.7;
+}
