@@ -5,20 +5,19 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(243, 205, 156);
-  border-radius: 15px;
+  border-radius: 100%;
 }
 
 button {
   border: none;
   cursor: pointer;
   background-color: transparent;
-  padding: 6px 30px 6px 10px;
-  margin-right: 10px;
+  padding: 24px;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 400;
   background-repeat: no-repeat;
-  background-position: right, center;
+  background-position: center, center;
 }
 .button:hover {
   opacity: 0.7;

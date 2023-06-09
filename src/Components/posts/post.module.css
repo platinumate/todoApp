@@ -1,0 +1,40 @@
+.post {
+  display: flex;
+  padding: 18px;
+
+  gap: 15px;
+  background-color: antiquewhite;
+  box-shadow: 0px 8px 6px 0px rgba(207, 205, 205, 0.3);
+  border-radius: 75px;
+}
+
+.post__checkbox {
+  display: flex;
+  margin: 0 10px;
+  align-items: center;
+}
+
+.post__wrapper {
+  display: flex;
+  width: 100%;
+  gap: 18px;
+}
+
+.post__text {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.post__text input {
+  width: 100%;
+  margin: 0;
+  border: none;
+  background-color: rgb(255, 250, 242);
+}
+
+.post__buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

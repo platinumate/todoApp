@@ -1,15 +1,34 @@
-import { ADD_ITEM, REMOVE_ITEM } from "../Constants/Constants";
+import {
+  ADD_ITEM,
+  REMOVE_ITEM,
+  EDIT_ITEM,
+  TOOGLE_ITEM,
+} from "../Constants/Constants";
 
 export const add_item = (todoValue) => {
   return {
     type: ADD_ITEM,
-    addTodo: todoValue,
+    todoValue,
   };
 };
 
-export const remove_item = (todoId) => {
+export const remove_item = (removeTodoId) => {
   return {
     type: REMOVE_ITEM,
-    removeTodo: todoId,
+    removeTodoId,
+  };
+};
+
+export const edit_item = (newTodoValue) => {
+  return {
+    type: EDIT_ITEM,
+    newTodoValue,
+  };
+};
+
+export const toggle_item = (toggleTodoId) => {
+  return {
+    type: TOOGLE_ITEM,
+    toggleTodoId,
   };
 };

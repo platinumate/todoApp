@@ -1,16 +1,16 @@
 import styles from "./input.module.css";
 
 const Input = (props) => {
-  const { createTask, setTask, task } = props;
+  const { eventFunc, setFunc, task, text, id, isCompleted } = props;
 
   return (
     <div className={styles.input}>
       <input
         type="text"
-        placeholder="Введите текст задачи"
-        onChange={(e) => setTask(e.target.value)}
+        placeholder={text}
+        onChange={(e) => setFunc(e.target.value)}
         value={task}
-        onKeyDown={(e) => createTask(e)}
+        onKeyDown={(e) => eventFunc(e, id, isCompleted)}
       />
     </div>
   );
