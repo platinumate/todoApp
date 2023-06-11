@@ -19,7 +19,11 @@ const Post = (props) => {
   return (
     <div className={styles.post}>
       <div className={styles.post__checkbox}>
-        <input type="checkbox" onClick={() => toggleTask(id)} />
+        <input
+          type="checkbox"
+          checked={isCompleted}
+          onChange={() => toggleTask(id)}
+        />
       </div>
       <div className={styles.post__wrapper}>
         <div className={styles.post__text}>
@@ -32,22 +36,27 @@ const Post = (props) => {
               isCompleted={isCompleted}
             />
           ) : (
-            <div style={{ opacity: isCompleted && 0.4 }}>{text}</div>
+            <div
+              style={{
+                opacity: isCompleted && 0.4,
+                textDecoration: isCompleted && "line-through",
+              }}
+            >
+              {text}
+            </div>
           )}
         </div>
-        <div>dev Id {id}</div>
         <div className={styles.post__buttons}>
+          {!isCompleted && (
+            <Button
+              img="url(/src/img/edit-black-16px.png)"
+              eventFunc={changeInput}
+              eventValue={id}
+            />
+          )}
           <Button
-            img="url(/public/cross-black-16px.png)"
+            img="url(/src/img/cross-black-16px.png)"
             eventFunc={removeTask}
-            eventValue={id}
-          />
-          {/* chnageInput вызов при нажатии */}
-          {/* changeInput() вызов при рендере страницы */}
-          {/* () => { changeInput() } вызов анонимной функции (callback) */}
-          <Button
-            img="url(/public/edit-black-16px.png)"
-            eventFunc={changeInput}
             eventValue={id}
           />
         </div>

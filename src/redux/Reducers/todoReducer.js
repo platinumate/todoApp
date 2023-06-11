@@ -1,4 +1,3 @@
-import { toggle_item } from "../Actions/todoAction";
 import {
   ADD_ITEM,
   REMOVE_ITEM,
@@ -6,7 +5,8 @@ import {
   TOOGLE_ITEM,
 } from "../Constants/Constants";
 
-let initialState = {
+export let initialState = {
+  visibilityFilter: "SHOW_ALL",
   todoList: [
     {
       id: 1,
@@ -74,4 +74,4 @@ let TodoReducer = (state = initialState, action) => {
   }
 };
 
-export default TodoReducer;
+export default TodoReducer

@@ -1,6 +1,7 @@
 import styles from "./app.module.css";
 import Input from "../input/input";
 import Tasks from "../tasks/tasks";
+import Filters from "../Filters/filters";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -11,15 +12,11 @@ import {
 } from "../../redux/Actions/todoAction";
 
 const App = () => {
-  const array = useSelector((store) => store.Todo.todoList);
+  let array = useSelector((store) => store.TodoReducer.todoList);
   const dispatch = useDispatch();
   const [task, setTask] = useState("");
   const [newTask, setNewTask] = useState("");
   const [isEditItem, setIsEditItem] = useState();
-
-  const toggleTask = (id) => {
-    dispatch(toggle_item(id));
-  };
 
   const createTask = (e) => {
     let item = {
@@ -33,15 +30,7 @@ const App = () => {
       setTask("");
     }
   };
-
-  const removeTask = (item) => {
-    dispatch(remove_item(item));
-  };
-
-  const changeInput = (id) => {
-    setIsEditItem(id);
-  };
-
+  
   const changeTask = (e, id, isCompleted) => {
     let item = {
       id,
@@ -56,14 +45,29 @@ const App = () => {
     }
   };
 
+  const toggleTask = (id) => {
+    dispatch(toggle_item(id));
+  };
+  
+  const removeTask = (item) => {
+    dispatch(remove_item(item));
+  };
+
+  const changeInput = (id) => {
+    setIsEditItem(id);
+  };
+
   return (
     <div className={styles.app}>
-      <Input
-        eventFunc={createTask}
-        setFunc={setTask}
-        task={task}
-        text="Введите текст задачи"
-      />
+      <div>
+        <Input
+          eventFunc={createTask}
+          setFunc={setTask}
+          task={task}
+          text="Введите текст задачи"
+        />
+        <Filters />
+      </div>
       <Tasks
         array={array}
         removeTask={removeTask}
