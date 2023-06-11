@@ -1,6 +1,5 @@
 import styles from "./tasks.module.css";
 import Post from "../posts/post";
-import { initialState } from "../../redux/Reducers/todoReducer";
 import { visibilityFilters } from "../../redux/Constants/Constants";
 import { useSelector } from "react-redux";
 
@@ -16,7 +15,6 @@ const Tasks = (props) => {
     toggleTask,
   } = props;
 
-  console.log(initialState)
   let filter = useSelector((store) => store.visibilityReducer.visibilityFilter);
 
   const filteredTasks = (todos, filter) => {

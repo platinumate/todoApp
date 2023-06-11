@@ -4,35 +4,7 @@ import {
   EDIT_ITEM,
   TOOGLE_ITEM,
 } from "../Constants/Constants";
-
-export let initialState = {
-  visibilityFilter: "SHOW_ALL",
-  todoList: [
-    {
-      id: 1,
-      text: "Drink coffee",
-      isCompleted: false,
-    },
-
-    {
-      id: 2,
-      text: "Play Genshin Impact",
-      isCompleted: false,
-    },
-
-    {
-      id: 3,
-      text: "Roll the Kokomi",
-      isCompleted: false,
-    },
-
-    {
-      id: 4,
-      text: "Go to sleep",
-      isCompleted: false,
-    },
-  ],
-};
+import { initialState } from "../store";
 
 let TodoReducer = (state = initialState, action) => {
   let todoListCopy = state.todoList;
@@ -74,4 +46,4 @@ let TodoReducer = (state = initialState, action) => {
   }
 };
 
-export default TodoReducer
+export default TodoReducer;

@@ -30,7 +30,7 @@ const App = () => {
       setTask("");
     }
   };
-  
+
   const changeTask = (e, id, isCompleted) => {
     let item = {
       id,
@@ -48,7 +48,7 @@ const App = () => {
   const toggleTask = (id) => {
     dispatch(toggle_item(id));
   };
-  
+
   const removeTask = (item) => {
     dispatch(remove_item(item));
   };
