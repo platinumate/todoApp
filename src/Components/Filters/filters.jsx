@@ -9,20 +9,21 @@ const Filters = () => {
   const changeFilter = (filter) => {
     dispatch(change_filter(filter));
   };
-
+  
   return (
     <div className={styles.filters}>
       <span>Показывать:</span>
       <label>
-        все
+        Все
         <input
+          defaultChecked
           type="radio"
           name="filters"
           onChange={() => changeFilter(visibilityFilters.SHOW_ALL)}
         />
       </label>
       <label>
-        активные
+        Активные
         <input
           type="radio"
           name="filters"
@@ -30,7 +31,7 @@ const Filters = () => {
         />
       </label>
       <label>
-        выполненные
+        Выполненные
         <input
           type="radio"
           name="filters"

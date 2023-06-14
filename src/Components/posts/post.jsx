@@ -14,6 +14,7 @@ const Post = (props) => {
     changeInput,
     isEditItem,
     toggleTask,
+    applyChange
   } = props;
 
   return (
@@ -33,7 +34,9 @@ const Post = (props) => {
               setFunc={setNewTask}
               task={newTask}
               id={id}
+              text={text}
               isCompleted={isCompleted}
+              buttonFunc={applyChange}
             />
           ) : (
             <div
@@ -49,13 +52,13 @@ const Post = (props) => {
         <div className={styles.post__buttons}>
           {!isCompleted && (
             <Button
-              img="url(/src/img/edit-black-16px.png)"
+              img="src/img/edit-img.svg"
               eventFunc={changeInput}
-              eventValue={id}
+              eventValue={[id, text]}
             />
           )}
           <Button
-            img="url(/src/img/cross-black-16px.png)"
+            img="src/img/cross-img.svg"
             eventFunc={removeTask}
             eventValue={id}
           />

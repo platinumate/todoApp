@@ -13,6 +13,7 @@ const Tasks = (props) => {
     changeInput,
     isEditItem,
     toggleTask,
+    applyChange
   } = props;
 
   let filter = useSelector((store) => store.visibilityReducer.visibilityFilter);
@@ -45,6 +46,7 @@ const Tasks = (props) => {
               changeInput={changeInput}
               isEditItem={isEditItem}
               toggleTask={toggleTask}
+              applyChange={applyChange}
             />
           );
         })}

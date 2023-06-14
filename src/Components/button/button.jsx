@@ -5,10 +5,9 @@ const Button = (props) => {
 
   return (
     <div className={styles.button}>
-      <button
-        style={{ backgroundImage: img }}
-        onClick={() => eventFunc(eventValue)}
-      ></button>
+      <button onClick={() => eventFunc(eventValue)}>
+        <img src={img} />
+      </button>
     </div>
   );
 };

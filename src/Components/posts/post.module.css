@@ -1,8 +1,8 @@
 .post {
   display: flex;
-  padding: 18px;
+  padding: 16px;
 
-  gap: 15px;
+  gap: 16px;
   background-color: antiquewhite;
   box-shadow: 0px 8px 6px 0px rgba(207, 205, 205, 0.3);
   border-radius: 75px;
@@ -12,6 +12,9 @@
   display: flex;
   margin: 0 10px;
   align-items: center;
+}
+.post__checkbox input {
+  cursor: pointer;
 }
 
 .post__wrapper {
@@ -28,6 +31,12 @@
 
 .post__text input {
   width: 100%;
+  margin: 0;
+  border: none;
+  background-color: rgb(255, 250, 242);
+}
+
+.post__text button {
   margin: 0;
   border: none;
   background-color: rgb(255, 250, 242);
