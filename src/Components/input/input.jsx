@@ -1,7 +1,16 @@
 import styles from "./input.module.css";
 
 const Input = (props) => {
-  const { eventFunc, setFunc, task, text, id, isCompleted, buttonFunc } = props;
+  const {
+    eventFunc,
+    setFunc,
+    task,
+    text,
+    id,
+    isCompleted,
+    buttonFunc,
+    newTheme,
+  } = props;
 
   return (
     <div className={styles.input}>
@@ -10,11 +19,20 @@ const Input = (props) => {
         placeholder={text}
         onChange={(e) => setFunc(e.target.value)}
         value={task}
-        onKeyDown={(e) => eventFunc(e, id, isCompleted)}
+        onKeyDown={(e) => eventFunc(e)}
+        autoFocus
       />
-      <button onClick={() => buttonFunc(id, isCompleted)}>
-        <img src="src/img/apply-img.svg" />
-      </button>
+      <div className={styles.input__button}>
+        <button onClick={() => buttonFunc(false, true, id, isCompleted)}>
+          <img
+            src={
+              newTheme === "LIGHT_THEME"
+                ? "src/img/apply-img.svg"
+                : "src/img/apply-img-light.png"
+            }
+          />
+        </button>
+      </div>
     </div>
   );
 };

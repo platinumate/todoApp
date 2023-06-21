@@ -3,10 +3,10 @@ import {
   REMOVE_ITEM,
   EDIT_ITEM,
   TOOGLE_ITEM,
-} from "../Constants/Constants";
+} from "../Constants/constants";
 import { initialState } from "../store";
 
-let TodoReducer = (state = initialState, action) => {
+let todoReducer = (state = initialState, action) => {
   let todoListCopy = state.todoList;
   switch (action.type) {
     case ADD_ITEM:
@@ -46,4 +46,4 @@ let TodoReducer = (state = initialState, action) => {
   }
 };
 
-export default TodoReducer;
+export default todoReducer;

@@ -12,42 +12,34 @@ import {
 } from "../../redux/Actions/todoAction";
 
 const App = () => {
-  let array = useSelector((store) => store.TodoReducer.todoList);
+  let newTheme = useSelector((store) => store.themeReducer.currentTheme);
+  let filter = useSelector((store) => store.visibilityReducer.visibilityFilter);
+  let array = useSelector((store) => store.todoReducer.todoList);
   const dispatch = useDispatch();
 
   const [task, setTask] = useState("");
   const [newTask, setNewTask] = useState("");
   const [isEditItem, setIsEditItem] = useState();
 
-  const createTask = (e) => {
+  const createTask = (e, isApplyCreate = false) => {
     let item = {
       id: array.length + 1,
       text: task,
       isCompleted: false,
     };
-    if (e.key === "Enter") {
+    if (e.key === "Enter" || isApplyCreate) {
       dispatch(add_item(item));
       setTask("");
     }
   };
-  const applyCreate = () => {
-    let item = {
-      id: array.length + 1,
-      text: task,
-      isCompleted: false,
-    };
 
-    dispatch(add_item(item));
-    setTask("");
-  };
-
-  const changeTask = (e, id, isCompleted) => {
+  const changeTask = (e, isApplyChange, id, isCompleted) => {
     let item = {
       id,
       text: newTask,
       isCompleted,
     };
-    if (e.key === "Enter") {
+    if (e.key === "Enter" || isApplyChange) {
       dispatch(edit_item(item));
       setNewTask("");
       setIsEditItem();
@@ -55,16 +47,6 @@ const App = () => {
       setNewTask("");
       setIsEditItem();
     }
-  };
-  const applyChange = (id, isCompleted) => {
-    let item = {
-      id,
-      text: newTask,
-      isCompleted,
-    };
-    dispatch(edit_item(item));
-    setNewTask("");
-    setIsEditItem();
   };
 
   const toggleTask = (id) => {
@@ -77,20 +59,21 @@ const App = () => {
 
   const changeInput = ([id, text]) => {
     setIsEditItem(id);
-    setNewTask(text)
+    setNewTask(text);
   };
 
   return (
     <div className={styles.app}>
-      <div>
+      <div className={styles.app__header}>
         <Input
+          text="Введите текст задачи"
           eventFunc={createTask}
           setFunc={setTask}
           task={task}
-          text="Введите текст задачи"
-          buttonFunc={applyCreate}
+          buttonFunc={createTask}
+          newTheme={newTheme}
         />
-        <Filters />
+        <Filters newTheme={newTheme} />
       </div>
       <Tasks
         array={array}
@@ -101,7 +84,8 @@ const App = () => {
         changeInput={changeInput}
         isEditItem={isEditItem}
         toggleTask={toggleTask}
-        applyChange={applyChange}
+        filter={filter}
+        newTheme={newTheme}
       />
     </div>
   );

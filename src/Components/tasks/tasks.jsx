@@ -1,7 +1,6 @@
 import styles from "./tasks.module.css";
 import Post from "../posts/post";
-import { visibilityFilters } from "../../redux/Constants/Constants";
-import { useSelector } from "react-redux";
+import { visibilityFilters } from "../../redux/Constants/constants";
 
 const Tasks = (props) => {
   const {
@@ -13,10 +12,9 @@ const Tasks = (props) => {
     changeInput,
     isEditItem,
     toggleTask,
-    applyChange
+    filter,
+    newTheme,
   } = props;
-
-  let filter = useSelector((store) => store.visibilityReducer.visibilityFilter);
 
   const filteredTasks = (todos, filter) => {
     switch (filter) {
@@ -46,7 +44,7 @@ const Tasks = (props) => {
               changeInput={changeInput}
               isEditItem={isEditItem}
               toggleTask={toggleTask}
-              applyChange={applyChange}
+              newTheme={newTheme}
             />
           );
         })}

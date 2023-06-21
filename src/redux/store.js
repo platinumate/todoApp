@@ -1,8 +1,10 @@
 import { combineReducers, createStore } from "redux";
-import TodoReducer from "./Reducers/todoReducer";
-import visibilityReducer from "./Reducers/VisibilityReducer";
+import todoReducer from "./Reducers/todoReducer";
+import visibilityReducer from "./Reducers/visibilityReducer";
+import themeReducer from "./Reducers/themeReducer";
 
 export let initialState = {
+  currentTheme: "LIGHT_THEME",
   visibilityFilter: "SHOW_ALL",
   todoList: [
     {
@@ -32,8 +34,9 @@ export let initialState = {
 };
 
 let reducers = combineReducers({
-  TodoReducer,
+  todoReducer,
   visibilityReducer,
+  themeReducer,
 });
 
 let store = createStore(reducers);

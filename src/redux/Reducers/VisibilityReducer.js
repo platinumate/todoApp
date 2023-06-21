@@ -1,4 +1,4 @@
-import { CHANGE_FILTER } from "../Constants/Constants";
+import { CHANGE_FILTER } from "../Constants/constants";
 import { initialState } from "../store";
 
 const visibilityReducer = (state = initialState, action) => {

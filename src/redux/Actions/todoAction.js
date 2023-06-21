@@ -3,8 +3,7 @@ import {
   REMOVE_ITEM,
   EDIT_ITEM,
   TOOGLE_ITEM,
-  CHANGE_FILTER,
-} from "../Constants/Constants";
+} from "../Constants/constants";
 
 export const add_item = (todoValue) => {
   return {
@@ -31,12 +30,5 @@ export const toggle_item = (toggleTodoId) => {
   return {
     type: TOOGLE_ITEM,
     toggleTodoId,
-  };
-};
-
-export const change_filter = (filter) => {
-  return {
-    type: CHANGE_FILTER,
-    filter,
   };
 };

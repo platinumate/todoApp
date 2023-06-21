@@ -1,28 +1,28 @@
+@import url("../../themeVars.css");
+
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(243, 205, 156);
+  background-color: var(--bg-color-3);
   border-radius: 100%;
 }
 
-img {
+.button img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-repeat: no-repeat;
-  background-position: center, center;
   background-color: transparent;
   margin: 18px;
 }
 
-button {
+.button button {
   border: none;
   cursor: pointer;
   background-color: transparent;
   transition: transform 200ms ease;
 }
 
-button:hover {
+.button button:hover {
   transform: scale(1.2);
 }

@@ -1,3 +1,5 @@
+@import url("../../themeVars.css");
+
 .tasks {
   display: flex;
   flex-direction: column;
@@ -9,5 +11,5 @@
   margin: 0 auto;
   padding: 10px 25px;
   border-radius: 25px;
-  background-color: antiquewhite;
+  background-color: var(--bg-color-2);
 }

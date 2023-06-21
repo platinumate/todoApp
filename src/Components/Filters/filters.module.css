@@ -1,28 +1,27 @@
+@import url("../../themeVars.css");
+
 .filters {
   display: flex;
   justify-content: center;
-  background-color: antiquewhite;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   width: 100%;
-  padding-bottom: 20px;
+  padding: 20px 0;
   gap: 20px;
   font-size: 22px;
-  box-shadow: 0px 8px 6px 0px rgba(207, 205, 205, 0.3);
+ 
 }
 
 .filters label {
   display: flex;
   gap: 10px;
   align-items: baseline;
-  background-color: rgb(243, 205, 156);
+  background-color: var(--bg-color-3);
   padding: 5px 20px;
   border-radius: 30px;
   cursor: pointer;
 }
 
 label:hover {
-  background-color: rgb(250, 216, 172);
+  background-color: var(--bg-color-3-hover);
 }
 
 .filters span {
