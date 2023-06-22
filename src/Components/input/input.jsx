@@ -19,7 +19,7 @@ const Input = (props) => {
         placeholder={text}
         onChange={(e) => setFunc(e.target.value)}
         value={task}
-        onKeyDown={(e) => eventFunc(e)}
+        onKeyDown={(e) => eventFunc(e, false, id, isCompleted)}
         autoFocus
       />
       <div className={styles.input__button}>

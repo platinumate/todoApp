@@ -21,7 +21,7 @@ const App = () => {
   const [newTask, setNewTask] = useState("");
   const [isEditItem, setIsEditItem] = useState();
 
-  const createTask = (e, isApplyCreate = false) => {
+  const createTask = (e, isApplyCreate) => {
     let item = {
       id: array.length + 1,
       text: task,

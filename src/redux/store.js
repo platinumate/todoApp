@@ -4,7 +4,7 @@ import visibilityReducer from "./Reducers/visibilityReducer";
 import themeReducer from "./Reducers/themeReducer";
 
 export let initialState = {
-  currentTheme: "LIGHT_THEME",
+  currentTheme: "DARK_THEME",
   visibilityFilter: "SHOW_ALL",
   todoList: [
     {

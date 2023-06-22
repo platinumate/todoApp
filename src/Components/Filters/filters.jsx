@@ -70,7 +70,6 @@ const Filters = (props) => {
       <label>
         Светлая
         <input
-          defaultChecked
           type="radio"
           name="themes"
           onChange={() => changeTheme(themes.LIGHT_THEME)}
@@ -79,6 +78,7 @@ const Filters = (props) => {
       <label>
         Тёмная
         <input
+          defaultChecked
           type="radio"
           name="themes"
           onChange={() => changeTheme(themes.DARK_THEME)}
