@@ -1,7 +1,7 @@
 import styles from "./app.module.css";
 import Input from "../input/input";
 import Tasks from "../tasks/tasks";
-import Filters from "../filters/filters";
+import Filters from "../Filters/filters";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,8 +10,6 @@ import {
   edit_item,
   toggle_item,
 } from "../../redux/Actions/todoAction";
-
-//fff
 
 const App = () => {
   let newTheme = useSelector((store) => store.themeReducer.currentTheme);
